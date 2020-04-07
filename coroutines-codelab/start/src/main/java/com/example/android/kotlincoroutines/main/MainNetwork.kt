@@ -43,8 +43,10 @@ fun getNetworkService() = service
  * Main network interface which will fetch a new welcome title for us
  */
 interface MainNetwork {
+    // add suspend modifier to the existing fetchNexTitle
+    // change return type from Call<String> to String
     @GET("next_title.json")
-    fun fetchNextTitle(): Call<String>
+    suspend fun fetchNextTitle(): String
 }
 
 
